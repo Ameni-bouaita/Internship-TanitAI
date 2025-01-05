@@ -18,7 +18,6 @@
 
 
          
->>>>>>> 48cc084b3a4d5a0df5a9bbe4775158f5628e089c
     <properties>
         <java.version>17</java.version>
         <jacoco.reportPath>${project.build.directory}/jacoco.exec</jacoco.reportPath>
