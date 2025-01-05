@@ -8,11 +8,23 @@
         <version>3.1.5</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
+<<<<<<< HEAD
     <groupId>tn.esprit.spring</groupId>
     <artifactId>internship-project</artifactId>
     <version>1.0.0</version>
     <name>Internship project</name>
     <description>Internship project</description>
+=======
+
+<groupId>tn.esprit.spring</groupId>
+    <artifactId>internship-foyer</artifactId> <!-- Updated artifactId -->
+    <version>1.0.0</version> <!-- Updated version -->
+    <name>Internship Foyer</name>
+    <description>Internship Foyer Application</description>
+
+
+         
+>>>>>>> 48cc084b3a4d5a0df5a9bbe4775158f5628e089c
     <properties>
         <java.version>17</java.version>
         <jacoco.reportPath>${project.build.directory}/jacoco.exec</jacoco.reportPath>
