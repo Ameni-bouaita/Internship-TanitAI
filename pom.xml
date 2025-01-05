@@ -23,7 +23,8 @@
         <jacoco.reportPath>${project.build.directory}/jacoco.exec</jacoco.reportPath>
         <sonar.jacoco.reportPaths>${jacoco.reportPath}</sonar.jacoco.reportPaths>
         <sonar.coverage.jacoco.xmlReportPaths>target/site/jacoco/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
-
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
     </properties>
     <dependencies>
         <dependency>
