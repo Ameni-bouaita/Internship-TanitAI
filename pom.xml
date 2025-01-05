@@ -11,10 +11,10 @@
 
 
 <groupId>tn.esprit.spring</groupId>
-    <artifactId>internship-foyer</artifactId> <!-- Updated artifactId -->
+    <artifactId>internship-project</artifactId> <!-- Updated artifactId -->
     <version>1.0.0</version> <!-- Updated version -->
-    <name>Internship Foyer</name>
-    <description>Internship Foyer Application</description>
+    <name>Internship Project</name>
+    <description>Internship Project Application</description>
 
 
          
