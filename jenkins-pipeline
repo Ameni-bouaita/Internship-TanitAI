@@ -1,0 +1,74 @@
+pipeline {
+    agent any
+    tools {
+        jdk 'JDK17'
+        maven 'MAVEN_HOME'
+    }
+
+    stages {
+        stage('Récupération du projet') {
+            steps {
+                 git url: 'https://github.com/Ameni-bouaita/Internship-TanitAI.git',
+                    credentialsId: 'Git',
+                    branch: 'AmeniBouaita-Foyer'
+            }
+        }
+
+        stage('Compilation') {
+            steps {
+                sh "mvn clean compile -e"  // Clean and compile
+            }
+        }
+        
+         stage('Exécution des tests') {
+            steps {
+                sh "mvn test -e"  // Run tests with JaCoCo
+            }
+        }
+        
+             stage('Déploiement sur Nexus') {
+            steps {
+                echo 'Déploiement de l\'application sur Nexus...'
+                sh 'mvn deploy -DskipTests'   // Déploiement sur Nexus
+                echo 'Déploiement réussi sur Nexus !'
+            }
+        }
+        
+        
+        
+         stage('Création du livrable') {
+            steps {
+                sh "mvn package -DskipTest"  // Package the application
+            }
+        }
+        
+        stage('Building image'){
+            steps{
+                 
+                sh 'docker build -t ameni23/internship-project:1.0.0 . '
+                
+            }
+        }
+         stage('Deploy image'){
+            steps{
+                 
+                sh '''
+            docker login -u ameni23 -p Ameni27973733
+            docker push ameni23/internship-project:1.0.0
+            
+            '''
+                
+            }
+        }
+        
+                
+                     stage('Monitoring Services G/P') {
+    steps {
+        script {
+            sh 'docker start bf819abc519d'
+            sh 'docker start 4fdb2e3d7feb'
+        }
+    }
+}
+    }
+}
